@@ -1,0 +1,18 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        // ForgeGradle Maven
+        maven { url = 'https://maven.minecraftforge.net/' }
+        // Parchment Maven for Librarian plugin
+        maven { url = 'https://maven.parchmentmc.org' }
+        // Sponge Maven for Mixin plugin
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
+}
+
+rootProject.name = 'stoneblockgregifiedcore'
