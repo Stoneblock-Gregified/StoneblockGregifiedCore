@@ -17,17 +17,15 @@ import net.minecraft.world.level.levelgen.DensityFunctions;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.NoiseRouter;
-import net.minecraft.world.level.levelgen.NoiseRouterData;
 import net.minecraft.world.level.levelgen.NoiseSettings;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import org.mangorage.sbgc.core.datagen.SBGCDimensions;
 
 import java.util.List;
 import java.util.OptionalLong;
 
-public class SBGCWorldGenProvider {
+public final class SBGCWorldGenProvider {
     public static void bootstrapDimensionType(BootstapContext<DimensionType> context) {
         context.register(SBGCDimensions.STONE_DIM_TYPE_KEY, new DimensionType(
                 OptionalLong.of(6000L), // Fixed time (optional)
