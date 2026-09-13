@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "org.mangorage.stoneblockgregifiedcore.mixin",
+  "package": "org.mangorage.sbgc.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "stoneblockgregifiedcore.refmap.json",
   "mixins": [
