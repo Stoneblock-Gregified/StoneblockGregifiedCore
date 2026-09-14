@@ -1,3 +1,5 @@
-// 1.20.1	2026-09-13T13:12:07.5176607	Registries
+// 1.20.1	2026-09-13T19:19:59.448879	Registries
+9f260634826f03b5d0d39baf958337c69c13599c data/sbgc/dimension/stone_dimension.json
 c2d5e66cfd3838cc79ebf1d74008c4583652656c data/sbgc/dimension_type/stone_dimension_type.json
-085daac192d0eb0d433bba533ad0118e3de335e0 data/sbgc/worldgen/noise_settings/stone_noise_settings.json
+f84041e102d54f99a51e59319925431700808377 data/sbgc/worldgen/biome/stone_biome.json
+ce391175a2503679207d307355cc5bf113144624 data/sbgc/worldgen/noise_settings/stone_noise_settings.json

@@ -8,6 +8,7 @@ import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import org.mangorage.sbgc.SBGC;
+import org.mangorage.sbgc.core.datagen.providers.SBGCBiomesProvider;
 import org.mangorage.sbgc.core.datagen.providers.SBGCWorldGenProvider;
 
 import java.util.Set;
@@ -15,9 +16,10 @@ import java.util.Set;
 public final class WorldGenDataGen {
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+            .add(Registries.BIOME, SBGCBiomesProvider::bootstrapBiomes)
             .add(Registries.DIMENSION_TYPE, SBGCWorldGenProvider::bootstrapDimensionType)
-            .add(Registries.NOISE_SETTINGS, SBGCWorldGenProvider::bootstrapNoiseSettings);
-            //.add(Registries.LEVEL_STEM, SBGCWorldGenProvider::bootstrapStem);
+            .add(Registries.NOISE_SETTINGS, SBGCWorldGenProvider::bootstrapNoiseSettings)
+            .add(Registries.LEVEL_STEM, SBGCWorldGenProvider::bootstrapStem);
 
     public static void onGatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();

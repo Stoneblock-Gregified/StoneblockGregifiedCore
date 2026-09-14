@@ -4,6 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
@@ -21,4 +22,8 @@ public final class SBGCDimensions {
 
     public static final ResourceKey<NoiseGeneratorSettings> STONE_NOISE_GEN_KEY = ResourceKey.create(
             Registries.NOISE_SETTINGS, new ResourceLocation(SBGC.MOD_ID, "stone_noise_settings"));
+
+    public static final ResourceKey<Biome> CLEAN_STONE_BIOME_KEY = ResourceKey.create(
+            Registries.BIOME,
+            new ResourceLocation(SBGC.MOD_ID, "stone_biome"));
 }

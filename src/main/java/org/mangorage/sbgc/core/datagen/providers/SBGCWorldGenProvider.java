@@ -6,8 +6,11 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.BiomeGenerationSettings;
+import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.FixedBiomeSource;
+import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
@@ -20,6 +23,7 @@ import net.minecraft.world.level.levelgen.NoiseRouter;
 import net.minecraft.world.level.levelgen.NoiseSettings;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import org.mangorage.sbgc.core.datagen.SBGCDimensions;
 
 import java.util.List;
@@ -107,7 +111,7 @@ public final class SBGCWorldGenProvider {
                 -64,                              // Sea level
                 false,                            // Disable mob spawning
                 false,                            // Disable aquifers (no liquid caves)
-                true,                            // Disable ore veins
+                false,                            // Disable ore veins
                 false                             // Legacy random source
         );
 
@@ -119,13 +123,13 @@ public final class SBGCWorldGenProvider {
         HolderGetter<NoiseGeneratorSettings> noiseSettings = context.lookup(Registries.NOISE_SETTINGS);
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 
-        // Use Plains as the single biome source for climate data
-        FixedBiomeSource biomeSource = new FixedBiomeSource(biomes.getOrThrow(Biomes.PLAINS));
+        FixedBiomeSource biomeSource = new FixedBiomeSource(biomes.getOrThrow(SBGCDimensions.CLEAN_STONE_BIOME_KEY));
 
         NoiseBasedChunkGenerator chunkGenerator = new NoiseBasedChunkGenerator(
                 biomeSource,
                 noiseSettings.getOrThrow(SBGCDimensions.STONE_NOISE_GEN_KEY)
         );
+
 
         LevelStem stem = new LevelStem(
                 dimTypes.getOrThrow(SBGCDimensions.STONE_DIM_TYPE_KEY),
