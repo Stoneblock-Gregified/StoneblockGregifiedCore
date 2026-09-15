@@ -1,4 +1,0 @@
-package org.mangorage.sbgc.core.registry;
-
-public final class SBGCBlockEntityRegistry {
-}
