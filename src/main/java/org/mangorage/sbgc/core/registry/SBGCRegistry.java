@@ -24,7 +24,7 @@ public final class SBGCRegistry {
             .title(Component.translatable("tab.sbgc.core_tab"))
             .icon(Items.STICK::getDefaultInstance)
             .displayItems((context, output) -> {
-
+                StorageCore.onCreativeTab(context, output);
             })
             .build()
     );
